@@ -10,16 +10,18 @@ export const StyledPopup = styled.section`
   animation: ${fadeIn} 250ms forwards;
   width: 50%;
   max-height: 40%;
-  border: 3px solid #000000bb;
-  background: #bbb;
-  border-radius: 20px;
-  padding: 15px;
+  padding: 15px 40px 0px 15px;
   display: grid;
   grid-template:
     'avatar content' 8fr
     'button button' 2fr
     / 3fr 7fr;
+  column-gap: 2rem;
+
+  background: #bbb;
   box-shadow: 10px 10px 10px 2px #00000044;
+  border: 3px solid #000000bb;
+  border-radius: 20px;
 
   && button {
     grid-area: button;

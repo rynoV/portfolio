@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { StyledPopup, PopupContainer, Info } from './AboutPopupStyles'
 import PopupAvatar from '../../Avatar/Popup/PopupAvatar'
 import { Refs, refKeys, stagesArr, stages } from '../../Context/context'
+import { Frame } from '../../Avatar/Popup/PopupAvatarStyles'
 
 export default class AboutPopup extends PureComponent {
   static propTypes = {
@@ -20,10 +21,11 @@ export default class AboutPopup extends PureComponent {
       stage !== stages.initial && (
         <PopupContainer>
           <StyledPopup>
-            <PopupAvatar
-              ref={el => this.context.setRef(refKeys.popupAvComp, el)}
-            />
-
+            <Frame>
+              <PopupAvatar
+                ref={el => this.context.setRef(refKeys.popupAvComp, el)}
+              />
+            </Frame>
             <Info>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -33,11 +33,19 @@ const getKeyframes = ({ animate, travel }) => {
   `
 }
 
-export const StyledPopupAvatar = styled.img`
-  animation: ${getKeyframes} 500ms forwards;
+export const Frame = styled.div`
   grid-area: avatar;
   align-self: end;
   justify-self: center;
+  box-sizing: border-box;
+  border: 2px solid #00000033;
+  padding: 5px 5px 0px;
+  min-height: 0;
+  height: 100%;
+`
+
+export const StyledPopupAvatar = styled.img`
+  max-height: 100%;
+  animation: ${getKeyframes} 500ms forwards;
   filter: drop-shadow(0px 5px 5px #00000033);
-  border-bottom: 2px solid #00000033;
 `

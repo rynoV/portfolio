@@ -13,7 +13,7 @@ export const StyledPopup = styled.section`
   border: 3px solid #000000bb;
   background: #bbb;
   border-radius: 20px;
-  padding: 15px;
+  padding: 15px 15px 0px;
   display: grid;
   grid-template:
     'avatar content' 8fr

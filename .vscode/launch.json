@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    /*
+     * Quit chrome and launch with: /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 in terminal. Restore tabs with history. */
+    /*
+     * If breakpoints are not setting, first try reloading the localhost page. If that doesn't work, restart chrome with chrome://restart or close and reopen with the above command.
+     * Just restart everything! npm, chrome, it all has to go */
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/src",
+      /*
+       * This setting is recommended by create-react-app but only seems to open up a webpack file when a breakpoint is hit, so I disabled it. */
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      }
+    },
+    {
+      "name": "Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceRoot}/src"
+    }
+  ]
+}

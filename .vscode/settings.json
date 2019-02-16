@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "**/node_modules/**": true,
+    "**/*.code-workspace/**": true
+  },
+  "workbench.colorTheme": "BatmanLight",
+  "cSpell.words": ["Unmount"]
+}

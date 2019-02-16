@@ -6,10 +6,14 @@ import { linkTo } from '@storybook/addon-links'
 
 import { Button, Welcome } from '@storybook/react/demo'
 import ProjectsAvContainer from '../Projects/ProjectsAvContainer/Container'
+import ContactInfo from '../Contact/ContactInfo/ContactInfo'
+import ContactPanel from '../Contact/Panel/ContactPanel'
 
 storiesOf('ProjectsAvContainer', module).add('Default', () => (
   <ProjectsAvContainer />
 ))
+
+storiesOf('ContactPanel', module).add('Default', () => <ContactPanel />)
 
 storiesOf('Welcome', module).add('to Storybook', () => (
   <Welcome showApp={linkTo('Button')} />

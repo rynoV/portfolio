@@ -6,10 +6,13 @@ import { refKeys, Refs } from '../../../Context/context'
 import initializeRefs from '../../../Utils/initializeRefs'
 import updateAnimateState from '../../../Utils/updateAnimateState'
 import getOffsetLeft from '../../../Utils/getOffsetLeft'
+import { projectsList } from '../../ProjectsPanel/projectsList'
 
 export default class SpeechBubble extends PureComponent {
   constructor(props) {
     super(props)
+
+    this.projectIndex = 0
 
     this.state = {
       animate: null,
@@ -19,6 +22,8 @@ export default class SpeechBubble extends PureComponent {
   static contextType = Refs
 
   render() {
+    const text = projectsList[this.projectIndex].description
+
     return (
       <StyledSpeechBubble
         animate={this.state.animate}
@@ -27,22 +32,7 @@ export default class SpeechBubble extends PureComponent {
           this.self = el
         }}
       >
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-          mollit anim id est laborum.
-        </p>
+        <p>{text}</p>
       </StyledSpeechBubble>
     )
   }
@@ -62,15 +52,9 @@ export default class SpeechBubble extends PureComponent {
    * Called on scroll from PageContainer
    * @param {Number} scrollLeft
    */
-  animate = scrollLeft => {
-    const { animateBounds } = this
+  animate = () => {
     const animate =
-      (scrollLeft >= animateBounds[0].left &&
-        scrollLeft <= animateBounds[0].right) ||
-      (scrollLeft >= animateBounds[1].left &&
-        scrollLeft <= animateBounds[1].right) ||
-      (scrollLeft >= animateBounds[2].left &&
-        scrollLeft <= animateBounds[2].right)
+      this.inProjectBound1 || this.inProjectBound2 || this.inProjectBound3
 
     updateAnimateState.bind(this, 'animate', animate)()
   }
@@ -87,9 +71,48 @@ export default class SpeechBubble extends PureComponent {
     })
   }
 
+  /**
+   * Called from pageContainer on scroll start and stop.
+   * Stops animation while scrolling and starts it on scroll stop.
+   * @param {Bool} scrolling
+   * @param {Number} scrollLeft
+   */
   setScrollState = (scrolling, scrollLeft) => {
-    if (this.scrolling !== scrolling) this.scrolling = scrolling
-    if (this.scrolling === false) this.animate(scrollLeft)
-    if (this.scrolling === true) this.setState({ animate: false })
+    if (scrolling === false) {
+      this.setInProjectBools(scrollLeft)
+
+      this.updateProjectIndex()
+
+      this.animate()
+    }
+    if (scrolling === true) this.setState({ animate: false })
+  }
+
+  /**
+   * this.projectIndex used to display the matching description for each project
+   */
+  updateProjectIndex() {
+    if (this.inProjectBound1) this.projectIndex = 0
+    else if (this.inProjectBound2) this.projectIndex = 1
+    else if (this.inProjectBound3) this.projectIndex = 2
+  }
+
+  /**
+   * @param {Number} scrollLeft
+   */
+  setInProjectBools(scrollLeft) {
+    const { animateBounds } = this
+
+    this.inProjectBound1 =
+      scrollLeft >= animateBounds[0].left &&
+      scrollLeft <= animateBounds[0].right
+
+    this.inProjectBound2 =
+      scrollLeft >= animateBounds[1].left &&
+      scrollLeft <= animateBounds[1].right
+
+    this.inProjectBound3 =
+      scrollLeft >= animateBounds[2].left &&
+      scrollLeft <= animateBounds[2].right
   }
 }

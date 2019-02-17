@@ -8,7 +8,6 @@ import ProjectsList from './ProjectsList/ProjectsList'
 export default class ProjectsListItem extends PureComponent {
   state = {
     active: false,
-    focused: false,
   }
 
   render() {

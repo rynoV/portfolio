@@ -16,7 +16,11 @@ export default class ProjectsList extends PureComponent {
     return (
       <Transition in={hovered} timeout={duration} unmountOnExit>
         {state => (
-          <StyledProjectsList state={state} duration={duration}>
+          <StyledProjectsList
+            state={state}
+            hovered={hovered}
+            duration={duration}
+          >
             {projectsList.map(({ name }, index) => (
               <li key={name}>
                 <NavLink

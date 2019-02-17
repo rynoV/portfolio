@@ -21,9 +21,14 @@ export default class ProjectsListItem extends PureComponent {
         <NavLink component={refKeys.projectsContainer} linkID="projects">
           Projects
         </NavLink>
+
         <ProjectsList hovered={this.state.active} />
       </StyledProjectsListItem>
     )
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.waitForFocusLeave)
   }
 
   handleMouseOver = () => {

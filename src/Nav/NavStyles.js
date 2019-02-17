@@ -7,7 +7,7 @@ export const StyledNav = styled.nav`
   z-index: 500;
   background: transparent;
   margin: 10px 15px;
-  width: ${({ active }) => (active ? '20%' : 'initial')};
+  width: ${({ active }) => (active ? '30%' : 'initial')};
   height: ${({ active }) => (active ? '30%' : 'initial')};
 `
 

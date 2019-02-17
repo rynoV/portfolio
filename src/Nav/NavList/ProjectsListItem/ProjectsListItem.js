@@ -7,7 +7,8 @@ import ProjectsList from './ProjectsList/ProjectsList'
 
 export default class ProjectsListItem extends PureComponent {
   state = {
-    hovered: false,
+    active: false,
+    focused: false,
   }
 
   render() {
@@ -15,20 +16,33 @@ export default class ProjectsListItem extends PureComponent {
       <StyledProjectsListItem
         onMouseOver={this.handleMouseOver}
         onMouseLeave={this.handleMouseLeave}
+        onFocus={this.handleFocus}
+        onBlur={this.handleBlur}
       >
         <NavLink component={refKeys.projectsContainer} linkID="projects">
           Projects
         </NavLink>
-        <ProjectsList hovered={this.state.hovered} />
+        <ProjectsList hovered={this.state.active} />
       </StyledProjectsListItem>
     )
   }
 
   handleMouseOver = () => {
-    this.setState({ hovered: true })
+    this.setState({ active: true })
   }
 
   handleMouseLeave = () => {
-    this.setState({ hovered: false })
+    this.setState({ active: false })
+  }
+
+  handleFocus = () => {
+    this.setState({ active: true })
+    clearTimeout(this.waitForFocusLeave)
+  }
+
+  handleBlur = () => {
+    this.waitForFocusLeave = setTimeout(() => {
+      this.setState({ active: false })
+    }, 10)
   }
 }

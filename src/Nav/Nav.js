@@ -7,39 +7,47 @@ import NavList from './NavList/NavList'
 
 export default class Nav extends PureComponent {
   state = {
-    expanded: false,
+    active: false,
   }
 
   render() {
-    const { expanded } = this.state
+    const { active } = this.state
 
     return (
       <StyledNav
         onMouseOver={this.handleMouseOver}
         onMouseLeave={this.handleMouseLeave}
         onFocus={this.handleFocus}
+        onBlur={this.handleBlur}
       >
         <Button onClick={this.handleClick}>
-          <Icon src={hamburger} alt="Menu icon" expanded={expanded} />
+          <Icon src={hamburger} alt="Menu icon" expanded={active} />
         </Button>
-        <NavList expanded={expanded} />
+        <NavList expanded={active} />
       </StyledNav>
     )
   }
 
   handleClick = () => {
-    this.setState(state => ({ expanded: !state.expanded }))
+    this.setState(state => ({ active: !state.active }))
   }
 
   handleMouseOver = () => {
-    this.setState({ expanded: true })
+    this.setState({ active: true })
   }
 
   handleMouseLeave = () => {
-    this.setState({ expanded: false })
+    this.setState({ active: false })
   }
 
   handleFocus = () => {
-    this.setState({ expanded: true })
+    this.setState({ active: true })
+    clearTimeout(this.waitForFocusLeave)
+  }
+
+  handleBlur = () => {
+    this.waitForFocusLeave = setTimeout(() => {
+      this.setState({ active: false })
+    }, 10)
   }
 }

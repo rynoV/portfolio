@@ -11,6 +11,10 @@ export const StyledPopup = styled.section`
   width: 50%;
   max-height: 40%;
   padding: 15px 40px 0px 15px;
+  border: 3px solid #000000bb;
+  background: #bbb;
+  border-radius: 20px;
+
   display: grid;
   grid-template:
     'avatar content' 8fr

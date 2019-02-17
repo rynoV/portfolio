@@ -3,7 +3,11 @@
  * @param {stages object property} stageName
  */
 export default function updateStage(stageName) {
-  this.setState({
-    progressContext: { stage: stageName, updateStage: this.updateStage },
-  })
+  this.setState(state => ({
+    progressContext: {
+      panelIndex: state.progressContext.panelIndex,
+      stage: stageName,
+      updateStage: state.progressContext.updateStage,
+    },
+  }))
 }

@@ -192,6 +192,7 @@ export default class PageContainer extends Component {
     this.setProjectQuickScroll()
 
     if (panelIndex == null) return
+    console.log('yup')
 
     const userIsInPanel =
       scrollLeft > panelBoundPairs[panelIndex].left + 10 &&

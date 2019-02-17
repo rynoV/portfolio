@@ -21,6 +21,7 @@ export default memo(function Projects() {
           {projectsList.map(
             ({ name, img: { src, alt }, description }, index) => (
               <ProjectPanel
+                id={name}
                 key={name}
                 index={index}
                 name={name}

@@ -99,6 +99,7 @@ export default class PageContainer extends Component {
 
     switch (e.keyCode) {
     case 38:
+      this.setProjectQuickScroll()
       if (panelIndex < panelBoundPairs.length - 1) {
         panelIndex++
         pageContainer.scrollTo({
@@ -109,6 +110,7 @@ export default class PageContainer extends Component {
       }
       break
     case 40:
+      this.setProjectQuickScroll()
       if (panelIndex > 0) {
         panelIndex--
         pageContainer.scrollTo({
@@ -176,14 +178,13 @@ export default class PageContainer extends Component {
    */
   scrollOnWheel = pixelY => {
     const { panelBoundPairs } = this
-    const { pageContainer, projectFigureComps } = this.state.refsContext.refs
+    const { pageContainer } = this.state.refsContext.refs
 
     const { scrollLeft } = pageContainer
 
     let { panelIndex } = this.state.progressContext
 
-    if (projectFigureComps[panelIndex - 1] != null)
-      projectFigureComps[panelIndex - 1].setQuickScroll()
+    this.setProjectQuickScroll()
 
     if (panelIndex == null) return
 
@@ -290,6 +291,14 @@ export default class PageContainer extends Component {
   handleScrollEnd = scrollLeft => {
     const { speechBubbleComp } = this.state.refsContext.refs
     speechBubbleComp.setScrollState(false, scrollLeft)
+  }
+
+  setProjectQuickScroll() {
+    const { panelIndex } = this.state.progressContext
+    const { projectFigureComps } = this.state.refsContext.refs
+
+    if (projectFigureComps[panelIndex - 1] != null)
+      projectFigureComps[panelIndex - 1].setQuickScroll()
   }
 
   /**

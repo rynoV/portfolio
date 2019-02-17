@@ -2,7 +2,6 @@ import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 
 import AboutPopupContainer from '../Popup/AboutPopupContainer'
-import AboutNav from '../Nav/AboutNav'
 import InitialAvatar from '../../Avatar/Initial/InitialAvatar'
 
 import { StyledAbout } from './AboutPanelStyles'
@@ -18,7 +17,6 @@ function AboutPanel() {
           ref={el => context.setRef(refKeys.aboutContainer, el)}
         >
           <AboutPopupContainer />
-          <AboutNav />
           <InitialAvatar />
         </StyledAbout>
       )}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Refs, refKeysArr, refKeys } from '../../../Context/context'
+import { Refs, refKeysArr, refKeys } from '../../Context/context'
 
-import initializeRefs from '../../../Utils/initializeRefs'
-import getOffsetLeft from '../../../Utils/getOffsetLeft'
+import initializeRefs from '../../Utils/initializeRefs'
+import getOffsetLeft from '../../Utils/getOffsetLeft'
 
 export default class NavLink extends Component {
   static contextType = Refs
@@ -12,6 +12,7 @@ export default class NavLink extends Component {
   static propTypes = {
     component: PropTypes.oneOf(refKeysArr),
     linkID: PropTypes.string,
+    index: PropTypes.number,
   }
 
   render() {
@@ -35,12 +36,18 @@ export default class NavLink extends Component {
   handleClick = e => {
     e.preventDefault()
 
-    const { component } = this.props
+    const {component, index} = this.props
+
+    const componentRef =
+      index != null
+        ? this[component][index]
+        : this[component]
+
     const { pageContainer } = this
 
     pageContainer.scrollTo({
       top: 0,
-      left: getOffsetLeft(this[component], pageContainer),
+      left: getOffsetLeft(componentRef, pageContainer),
       behavior: 'smooth',
     })
   }

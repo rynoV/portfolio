@@ -134,8 +134,14 @@ export default class PopupAvatar extends PureComponent {
   initialize() {
     const { self, pageContainer } = this
 
-    this.animateRightBound = getOffsetLeft(self, pageContainer) - this.width * 2
-
     this.animateLeftBound = pageContainer.getBoundingClientRect().left
+
+    const preferredRightBound =
+      getOffsetLeft(self, pageContainer) - this.width * 2
+
+    this.animateRightBound =
+      preferredRightBound > this.animateLeftBound
+        ? preferredRightBound
+        : getOffsetLeft(self, pageContainer)
   }
 }

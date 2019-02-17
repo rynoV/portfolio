@@ -305,6 +305,9 @@ export default class PageContainer extends Component {
 
     const { pageContainer } = this.state.refsContext.refs
     const { panelIndex } = this.state.progressContext
+
+    if (panelIndex == null) return
+
     const { left, right } = this.panelBoundPairs[panelIndex]
     const panelMidWay = left + (right - left) / 2
 

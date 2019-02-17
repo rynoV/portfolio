@@ -19,6 +19,7 @@ export default class Nav extends PureComponent {
         onMouseLeave={this.handleMouseLeave}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
+        active={active}
       >
         <Button onClick={this.handleClick}>
           <Icon src={hamburger} alt="Menu icon" expanded={active} />

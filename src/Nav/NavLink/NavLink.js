@@ -36,12 +36,10 @@ export default class NavLink extends Component {
   handleClick = e => {
     e.preventDefault()
 
-    const {component, index} = this.props
+    const { component, index } = this.props
 
     const componentRef =
-      index != null
-        ? this[component][index]
-        : this[component]
+      index != null ? this[component][index] : this[component]
 
     const { pageContainer } = this
 

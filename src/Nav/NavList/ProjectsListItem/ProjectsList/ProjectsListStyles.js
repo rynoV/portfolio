@@ -4,8 +4,8 @@ const expand = ({ state }) => {
   const enter = state === 'entering' || state === 'entered'
   const exit = state === 'exiting' || state === 'exited'
 
-  const initialScale = enter ? 'scaleY(0)' : exit ? 'scaleY(1)' : 'scaleY(0)'
-  const finalScale = enter ? 'scaleY(1)' : exit ? 'scaleY(0)' : 'scaleY(1)'
+  const initialScale = enter ? 'scaleX(0)' : exit ? 'scaleX(1)' : 'scaleX(0)'
+  const finalScale = enter ? 'scaleX(1)' : exit ? 'scaleX(0)' : 'scaleX(1)'
 
   return keyframes`
     from {
@@ -17,21 +17,18 @@ const expand = ({ state }) => {
   `
 }
 
-export const StyledNavList = styled.ul`
+export const StyledProjectsList = styled.ul`
   --duration: ${({ duration }) => `${duration}ms`};
 
+  display: flex;
   list-style: none;
-  margin: 0;
+  margin-left: 20px;
   padding: 0;
 
-  transform-origin: top center;
   animation: ${expand} var(--duration) forwards;
+  transform-origin: center left;
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
   li {
-    margin: 20px 0px;
+    margin: 0px 20px;
   }
 `

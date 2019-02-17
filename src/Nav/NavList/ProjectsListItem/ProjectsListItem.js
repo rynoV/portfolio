@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react'
-import { StyledProjectsListItem, ProjectsList } from './ProjectsListItemStyles'
+import { StyledProjectsListItem } from './ProjectsListItemStyles'
 import { refKeys } from '../../../Context/context'
 
-import { projectsList } from '../../../Projects/ProjectsPanel/projectsList'
 import NavLink from '../../NavLink/NavLink'
+import ProjectsList from './ProjectsList/ProjectsList'
 
 export default class ProjectsListItem extends PureComponent {
   state = {
@@ -19,19 +19,7 @@ export default class ProjectsListItem extends PureComponent {
         <NavLink component={refKeys.projectsContainer} linkID="projects">
           Projects
         </NavLink>
-        <ProjectsList hovered={this.state.hovered}>
-          {projectsList.map(({ name }, index) => (
-            <li key={name}>
-              <NavLink
-                component={refKeys.projectContainers}
-                index={index}
-                linkID={`#${name}`}
-              >
-                {name}
-              </NavLink>
-            </li>
-          ))}
-        </ProjectsList>
+        <ProjectsList hovered={this.state.hovered} />
       </StyledProjectsListItem>
     )
   }

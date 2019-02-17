@@ -12,9 +12,13 @@ export default class Nav extends PureComponent {
 
   render() {
     const { expanded } = this.state
-    
+
     return (
-      <StyledNav>
+      <StyledNav
+        onMouseOver={this.handleMouseOver}
+        onMouseLeave={this.handleMouseLeave}
+        onFocus={this.handleFocus}
+      >
         <Button onClick={this.handleClick}>
           <Icon src={hamburger} alt="Menu icon" expanded={expanded} />
         </Button>
@@ -25,5 +29,17 @@ export default class Nav extends PureComponent {
 
   handleClick = () => {
     this.setState(state => ({ expanded: !state.expanded }))
+  }
+
+  handleMouseOver = () => {
+    this.setState({ expanded: true })
+  }
+
+  handleMouseLeave = () => {
+    this.setState({ expanded: false })
+  }
+
+  handleFocus = () => {
+    this.setState({ expanded: true })
   }
 }

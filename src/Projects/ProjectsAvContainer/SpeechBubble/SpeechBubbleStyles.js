@@ -38,4 +38,10 @@ export const StyledSpeechBubble = styled.div`
   border-radius: 10px;
   opacity: 0;
   animation: var(--animDuration) forwards ${getKeyframes};
+
+  && p {
+    max-height: 100%;
+    margin: 0;
+    overflow: scroll;
+  }
 `

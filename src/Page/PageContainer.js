@@ -97,8 +97,12 @@ export default class PageContainer extends Component {
 
     let { panelIndex } = this.state.progressContext
 
+    const activeElOverflow = window.getComputedStyle(document.activeElement)
+      .overflowY
+
     switch (e.keyCode) {
     case 38:
+      if (activeElOverflow === 'auto' || activeElOverflow === 'scroll') break
       this.setProjectQuickScroll()
       if (panelIndex < panelBoundPairs.length - 1) {
         panelIndex++
@@ -110,6 +114,7 @@ export default class PageContainer extends Component {
       }
       break
     case 40:
+      if (activeElOverflow === 'auto' || activeElOverflow === 'scroll') break
       this.setProjectQuickScroll()
       if (panelIndex > 0) {
         panelIndex--
@@ -291,6 +296,35 @@ export default class PageContainer extends Component {
   handleScrollEnd = scrollLeft => {
     const { speechBubbleComp } = this.state.refsContext.refs
     speechBubbleComp.setScrollState(false, scrollLeft)
+
+    this.scrollSnap(scrollLeft)
+  }
+
+  scrollSnap = scrollLeft => {
+    if (this.snap === false) return
+
+    const { pageContainer } = this.state.refsContext.refs
+    const { panelIndex } = this.state.progressContext
+    const { left, right } = this.panelBoundPairs[panelIndex]
+    const panelMidWay = left + (right - left) / 2
+
+    if (scrollLeft <= panelMidWay)
+      pageContainer.scrollTo({
+        top: 0,
+        left: left,
+        behavior: 'smooth',
+      })
+    else if (scrollLeft > panelMidWay)
+      pageContainer.scrollTo({
+        top: 0,
+        left: right,
+        behavior: 'smooth',
+      })
+
+    this.snap = false
+    setTimeout(() => {
+      this.snap = true
+    }, 500)
   }
 
   setProjectQuickScroll() {

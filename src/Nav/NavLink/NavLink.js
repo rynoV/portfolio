@@ -29,12 +29,17 @@ export default class NavLink extends Component {
     await initializeRefs.bind(
       this,
       this.props.component,
-      refKeys.pageContainer
+      refKeys.pageContainer,
+      refKeys.projectFigureComps
     )()
   }
 
   handleClick = e => {
     e.preventDefault()
+
+    this.projectFigureComps.forEach(figureComp => {
+      figureComp.setQuickScroll()
+    })
 
     const { component, index } = this.props
 

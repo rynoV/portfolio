@@ -46,6 +46,24 @@ export default class SpeechBubble extends PureComponent {
     )()
 
     this.initializeFromRefs()
+
+    window.addEventListener('resize', this.handleResize)
+  }
+  
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize)
+  }
+
+  /**
+   * Waits for resize to finish, then calls onResizeFinish
+   */
+  handleResize = () => {
+    clearTimeout(this.resizeTimeoutID)
+    this.resizeTimeoutID = setTimeout(this.onResizeFinish, 500)
+  }
+
+  onResizeFinish = () => {
+    this.initializeFromRefs()
   }
 
   /**

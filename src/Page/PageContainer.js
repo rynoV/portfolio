@@ -298,6 +298,10 @@ export default class PageContainer extends Component {
 
     const { speechBubbleComp } = this.state.refsContext.refs
     speechBubbleComp.setScrollState(false, scrollLeft)
+
+    const { panelContainers, state } = this
+    const currentContainer = panelContainers[state.progressContext.panelIndex]
+    currentContainer.focus()
   }
 
   scrollSnap = scrollLeft => {
@@ -389,13 +393,13 @@ export default class PageContainer extends Component {
     const { refs } = this.state.refsContext
 
     /* ---Panels--- */
-    const panelContainers = [
+    this.panelContainers = [
       refs.aboutContainer,
       ...refs.projectContainers,
       refs.contactContainer,
     ]
 
-    this.panelBoundPairs = panelContainers.map(panelContainer => ({
+    this.panelBoundPairs = this.panelContainers.map(panelContainer => ({
       left: getOffsetLeft(panelContainer, refs.pageContainer),
       right:
         getOffsetLeft(panelContainer, refs.pageContainer) +

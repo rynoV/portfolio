@@ -7,7 +7,6 @@ import { Frame } from '../../Avatar/Popup/PopupAvatarStyles'
 import PopupAvatar from '../../Avatar/Popup/PopupAvatar'
 
 import { Refs, refKeys, stagesArr, stages } from '../../Context/context'
-import ActionIndicator from './ActionIndicator/ActionIndicator'
 
 export default class AboutPopup extends PureComponent {
   static propTypes = {
@@ -54,7 +53,6 @@ export default class AboutPopup extends PureComponent {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </Info>
-            <ActionIndicator />
           </StyledPopup>
         </PopupContainer>
       )

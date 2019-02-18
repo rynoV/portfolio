@@ -19,6 +19,7 @@ export default class Nav extends PureComponent {
         onMouseLeave={this.handleMouseLeave}
         onFocus={this.handleFocus}
         onBlur={this.handleBlur}
+        onKeyUp={this.handleKeyUp}
         active={active}
       >
         <Button onClick={this.handleClick}>
@@ -50,5 +51,20 @@ export default class Nav extends PureComponent {
     this.waitForFocusLeave = setTimeout(() => {
       this.setState({ active: false })
     }, 10)
+  }
+
+  handleKeyUp = e => {
+    switch (e.key) {
+    case 'Escape':
+      this.setState({ active: false })
+      break
+
+    case 'Enter':
+      this.setState({ active: false })
+      break
+
+    default:
+      break
+    }
   }
 }

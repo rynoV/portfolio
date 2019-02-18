@@ -32,6 +32,6 @@ export const StyledNavList = styled.ul`
     text-decoration: none;
   }
   li {
-    margin: 30px 0px;
+    margin: 20px 0px;
   }
 `

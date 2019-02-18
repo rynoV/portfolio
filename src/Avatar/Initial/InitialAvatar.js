@@ -1,11 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  StyledInitialAvatar,
-  Button,
-  SpeechBubble,
-} from './InitialAvatarStyles'
+import { StyledInitialAvatar, Button } from './InitialAvatarStyles'
 
 import { stages, Progress } from '../../Context/context'
 
@@ -46,9 +42,6 @@ export default class InitialAvatar extends PureComponent {
               mountState={state}
               duration={duration}
             >
-              <SpeechBubble>
-                <p>Click me!</p>
-              </SpeechBubble>
               <StyledInitialAvatar
                 src={avatar_standing}
                 alt="Pixel Avatar of Calum Sieppert"

@@ -45,3 +45,28 @@ export const Button = styled.button`
           animation: ${jump} 3s 1s infinite ease-out;
         `};
 `
+
+export const SpeechBubble = styled.div`
+  --triangle-space: 20px;
+
+  position: relative;
+  background: #bbb;
+  border-radius: 0.4em;
+  padding: 0.5em 1em;
+  bottom: var(--triangle-space);
+  left: 10%;
+
+  &&:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    width: 0;
+    height: 0;
+    border: var(--triangle-space) solid transparent;
+    border-top-color: #bbb;
+    border-bottom: 0;
+    border-left: 0;
+    margin-bottom: calc(-1 * var(--triangle-space));
+  }
+`

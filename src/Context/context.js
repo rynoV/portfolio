@@ -14,6 +14,8 @@ export const refKeysArr = [
   'projectsAvComp',
   'popupAvComp',
   'contactAvComp',
+  'aboutPopupComp',
+  'initialAvComp',
   'projectFigureComps',
   'aboutContainer',
   'contactContainer',

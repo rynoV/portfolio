@@ -1,18 +1,31 @@
 import styled, { keyframes } from 'styled-components/macro'
 
-const fadeIn = keyframes`
-  from {opacity: 0;}
-  to {opacity: 1;}
-`
+const fade = ({ mountState }) => {
+  const initialOpacity =
+    mountState === 'entering' ? 0 : mountState === 'exiting' ? 1 : 0
+  const finalOpacity =
+    mountState === 'entering' ? 1 : mountState === 'exiting' ? 0 : 1
+
+  return keyframes`
+    from {
+      opacity: ${initialOpacity};
+    }
+    to {
+      opacity: ${finalOpacity};
+    }
+  `
+}
 
 export const StyledPopup = styled.section`
+  --duration: ${({ duration }) => `${duration}ms`};
+
   display: grid;
   grid-template:
     'avatar info' 1fr
     / 3fr 7fr;
   column-gap: 1em;
   opacity: 0;
-  animation: ${fadeIn} 250ms forwards;
+  animation: ${fade} var(--duration) forwards;
   width: 50%;
   max-height: 40%;
   padding: 2em 1em;

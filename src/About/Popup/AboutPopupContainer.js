@@ -7,8 +7,6 @@ export default class AboutPopupContainer extends PureComponent {
   static contextType = Progress
 
   render() {
-    return (
-      <AboutPopup stage={this.context.stage} handleClick={this.handleClick} />
-    )
+    return <AboutPopup progressContext={this.context} />
   }
 }

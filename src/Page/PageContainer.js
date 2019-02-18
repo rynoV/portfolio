@@ -88,20 +88,20 @@ export default class PageContainer extends Component {
    * Stops project and popupAvatar animations on tab keyup.
    */
   handleKeyup = e => {
-    const { panelBoundPairs } = this,
-          {
-            pageContainer,
-            projectFigureComps,
-            popupAvComp,
-          } = this.state.refsContext.refs
-
-    let { panelIndex } = this.state.progressContext
-
+    const { panelBoundPairs, state } = this
+    const {
+      pageContainer,
+      projectFigureComps,
+      popupAvComp,
+      aboutPopupComp,
+    } = state.refsContext.refs
     const activeElOverflow = window.getComputedStyle(document.activeElement)
       .overflowY
 
-    switch (e.keyCode) {
-    case 38:
+    let { panelIndex } = state.progressContext
+
+    switch (e.key) {
+    case 'ArrowUp':
       if (activeElOverflow === 'auto' || activeElOverflow === 'scroll') break
       this.setProjectQuickScroll()
       if (panelIndex < panelBoundPairs.length - 1) {
@@ -113,7 +113,7 @@ export default class PageContainer extends Component {
         })
       }
       break
-    case 40:
+    case 'ArrowDown':
       if (activeElOverflow === 'auto' || activeElOverflow === 'scroll') break
       this.setProjectQuickScroll()
       if (panelIndex > 0) {
@@ -125,11 +125,15 @@ export default class PageContainer extends Component {
         })
       }
       break
-    case 9:
+    case 'Tab':
       if (popupAvComp) popupAvComp.stopAnimate()
       projectFigureComps.forEach(projectFigureComp =>
         projectFigureComp.stopAnimate()
       )
+      break
+    case 'Escape':
+      if (state.progressContext.stage !== stages.initial)
+        aboutPopupComp.handleEscapeKey()
       break
     default:
       break
@@ -269,6 +273,8 @@ export default class PageContainer extends Component {
             contactAvComp,
             speechBubbleComp,
             projectsAvComp,
+            initialAvComp,
+            projectsContainer,
           } = this.state.refsContext.refs
 
     projectsAvComp.animate(scrollLeft)
@@ -281,8 +287,7 @@ export default class PageContainer extends Component {
       400
     )
 
-    if (state.progressContext.stage === 'initial')
-      state.progressContext.updateStage(stages.aboutPopup)
+    if (state.progressContext.stage === 'initial') initialAvComp.startUnmount()
 
     updatePanelIndex(scrollLeft)
 

@@ -20,14 +20,21 @@ const jump = keyframes`
 }
 `
 
-const animateOut = keyframes`
+const fade = ({ mountState }) => {
+  const initialOpacity =
+    mountState === 'entering' ? 0 : mountState === 'exiting' ? 1 : 1
+  const finalOpacity =
+    mountState === 'entering' ? 1 : mountState === 'exiting' ? 0 : 0
+
+  return keyframes`
     from {
-      opacity: 1;
+      opacity: ${initialOpacity};
     }
     to {
-      opacity: 0;
+      opacity: ${finalOpacity};
     }
   `
+}
 
 export const Button = styled.button`
   position: absolute;
@@ -37,9 +44,9 @@ export const Button = styled.button`
   border: none;
   padding: 0;
   ${({ mountState, duration }) =>
-    mountState === 'exiting'
+    mountState === 'exiting' || mountState === 'entering'
       ? css`
-          animation: ${animateOut} ${duration}ms forwards;
+          animation: ${fade} ${duration}ms forwards;
         `
       : css`
           animation: ${jump} 3s 1s infinite ease-out;

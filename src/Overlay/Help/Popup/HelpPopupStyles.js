@@ -20,7 +20,7 @@ const fade = ({ state }) => {
 export const StyledHelpPopup = styled.div`
   --duration: ${({ duration }) => `${duration}ms`};
 
-  margin: 2rem 0;
+  margin: 1rem 0;
   padding: 0.2em;
   background: #bbb;
   box-shadow: 5px 5px 5px 2px #00000055;

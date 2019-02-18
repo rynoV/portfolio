@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 
 import { Arrow, ArrowButton } from './ArrowsStyles'
 
-import { Refs, refKeys } from '../../Context/context'
+import { Refs, refKeys, stages } from '../../Context/context'
 
 import rightArrowIcon from '../../images/right_arrow.svg'
 import leftArrowIcon from '../../images/left_arrow.svg'
@@ -25,7 +25,7 @@ class Arrows extends PureComponent {
   static contextType = Refs
 
   render() {
-    const { panelIndex } = this.props.progressContext
+    const { panelIndex, stage } = this.props.progressContext
 
     const leftArrow = (
       <ArrowButton
@@ -62,10 +62,12 @@ class Arrows extends PureComponent {
     )
 
     return (
-      <>
-        {panelIndex > 0 && leftArrow}
-        {panelIndex < this.numOfPanels - 1 && rightArrow}
-      </>
+      stage !== stages.initial && (
+        <>
+          {panelIndex > 0 && leftArrow}
+          {panelIndex < this.numOfPanels - 1 && rightArrow}
+        </>
+      )
     )
   }
 

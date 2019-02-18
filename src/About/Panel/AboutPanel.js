@@ -17,7 +17,9 @@ function AboutPanel() {
           ref={el => context.setRef(refKeys.aboutContainer, el)}
         >
           <AboutPopupContainer />
-          <InitialAvatar />
+          <InitialAvatar
+            ref={el => context.setRef(refKeys.initialAvComp, el)}
+          />
         </StyledAbout>
       )}
     </Refs.Consumer>

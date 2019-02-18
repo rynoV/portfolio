@@ -278,7 +278,7 @@ export default class PageContainer extends Component {
     clearTimeout(this.waitForScrollEnd)
     this.waitForScrollEnd = setTimeout(
       () => this.handleScrollEnd(scrollLeft),
-      100
+      400
     )
 
     if (state.progressContext.stage === 'initial')

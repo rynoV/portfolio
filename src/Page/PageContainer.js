@@ -257,7 +257,6 @@ export default class PageContainer extends Component {
   /**
    * Called on container scroll
    * Updates stage from initial to popup
-   * Calls the project component's scroll handler
    * Starts panelIndex update
    * Animates avatars
    * @param {Event Object} e
@@ -278,7 +277,7 @@ export default class PageContainer extends Component {
     clearTimeout(this.waitForScrollEnd)
     this.waitForScrollEnd = setTimeout(
       () => this.handleScrollEnd(scrollLeft),
-      100
+      300
     )
 
     if (state.progressContext.stage === 'initial')

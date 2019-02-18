@@ -5,8 +5,8 @@ import NavLink from '../../../NavLink/NavLink'
 
 import { StyledProjectsList } from './ProjectsListStyles'
 
-import { refKeys } from '../../../../Context/context'
-import { projectsList } from '../../../../Projects/ProjectsPanel/projectsList'
+import { refKeys } from '../../../../../Context/context'
+import { projectsList } from '../../../../../Projects/ProjectsPanel/projectsList'
 
 export default class ProjectsList extends PureComponent {
   render() {

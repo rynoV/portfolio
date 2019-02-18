@@ -5,7 +5,7 @@ import NavLink from '../NavLink/NavLink'
 
 import { StyledNavList } from './NavListStyles'
 
-import { refKeys } from '../../Context/context'
+import { refKeys } from '../../../Context/context'
 import ProjectsListItem from './ProjectsListItem/ProjectsListItem'
 
 export default class NavList extends PureComponent {

@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react'
+
 import { StyledProjectsListItem } from './ProjectsListItemStyles'
-import { refKeys } from '../../../Context/context'
+
+import { refKeys } from '../../../../Context/context'
 
 import NavLink from '../../NavLink/NavLink'
 import ProjectsList from './ProjectsList/ProjectsList'

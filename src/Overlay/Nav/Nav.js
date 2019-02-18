@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 
 import { StyledNav, Icon, Button } from './NavStyles'
 
-import hamburger from '../images/menu_icon_translucent.svg'
+import hamburger from '../../images/menu_icon_translucent.svg'
 import NavList from './NavList/NavList'
 
 export default class Nav extends PureComponent {

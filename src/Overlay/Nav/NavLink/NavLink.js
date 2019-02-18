@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Refs, refKeysArr, refKeys } from '../../Context/context'
+import { Refs, refKeysArr, refKeys } from '../../../Context/context'
 
-import initializeRefs from '../../Utils/initializeRefs'
-import getOffsetLeft from '../../Utils/getOffsetLeft'
+import initializeRefs from '../../../Utils/initializeRefs'
+import getOffsetLeft from '../../../Utils/getOffsetLeft'
 
 export default class NavLink extends Component {
   static contextType = Refs

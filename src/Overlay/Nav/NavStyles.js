@@ -2,8 +2,9 @@ import styled from 'styled-components/macro'
 
 export const StyledNav = styled.nav`
   position: absolute;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0;  */
+  align-self: flex-start;
   z-index: 500;
   background: transparent;
   margin: 10px 15px;

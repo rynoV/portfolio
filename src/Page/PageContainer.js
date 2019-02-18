@@ -274,7 +274,6 @@ export default class PageContainer extends Component {
             speechBubbleComp,
             projectsAvComp,
             initialAvComp,
-            projectsContainer,
           } = this.state.refsContext.refs
 
     projectsAvComp.animate(scrollLeft)
@@ -301,8 +300,10 @@ export default class PageContainer extends Component {
   handleScrollEnd = scrollLeft => {
     this.scrollSnap(scrollLeft)
 
-    const { speechBubbleComp } = this.state.refsContext.refs
+    const { speechBubbleComp, popupAvComp } = this.state.refsContext.refs
     speechBubbleComp.setScrollState(false, scrollLeft)
+
+    if (scrollLeft === 0) popupAvComp.animate()
 
     const { panelContainers, state } = this
     const currentContainer = panelContainers[state.progressContext.panelIndex]

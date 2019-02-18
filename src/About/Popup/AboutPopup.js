@@ -1,18 +1,13 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  StyledPopup,
-  PopupContainer,
-  Info,
-  Arrow,
-  ArrowWrapper,
-} from './AboutPopupStyles'
-import PopupAvatar from '../../Avatar/Popup/PopupAvatar'
-import { Refs, refKeys, stagesArr, stages } from '../../Context/context'
+import { StyledPopup, PopupContainer, Info } from './AboutPopupStyles'
 import { Frame } from '../../Avatar/Popup/PopupAvatarStyles'
 
-import rightArrow from '../../images/right_arrow.svg'
+import PopupAvatar from '../../Avatar/Popup/PopupAvatar'
+
+import { Refs, refKeys, stagesArr, stages } from '../../Context/context'
+import ActionIndicator from './ActionIndicator/ActionIndicator'
 
 export default class AboutPopup extends PureComponent {
   static propTypes = {
@@ -59,9 +54,7 @@ export default class AboutPopup extends PureComponent {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </Info>
-            <ArrowWrapper>
-              <Arrow src={rightArrow} alt="Arrow icon" />
-            </ArrowWrapper>
+            <ActionIndicator />
           </StyledPopup>
         </PopupContainer>
       )

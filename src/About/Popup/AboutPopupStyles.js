@@ -5,47 +5,6 @@ const fadeIn = keyframes`
   to {opacity: 1;}
 `
 
-const slideRight = keyframes`
-  0% {
-    left: 0;
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    left: var(--left);
-    opacity: 0;
-  }
-`
-
-export const ArrowWrapper = styled.div`
-  grid-area: arrowBox;
-  justify-self: center;
-  align-self: center;
-  width: 100%;
-  height: 100%;
-  margin: 1em 0;
-  display: flex;
-  align-items: center;
-  border-left: 2px solid #00000033;
-  border-right: 2px solid #00000033;
-  border-radius: 50px;
-`
-
-export const Arrow = styled.img`
-  --width: 7%;
-  --left: calc(100% - var(--width));
-
-  max-height: 80%;
-  width: var(--width);
-  position: relative;
-  animation: ${slideRight} 4.5s linear infinite;
-`
-
 export const StyledPopup = styled.section`
   opacity: 0;
   animation: ${fadeIn} 250ms forwards;
@@ -59,7 +18,7 @@ export const StyledPopup = styled.section`
   display: grid;
   grid-template:
     'avatar content' 8fr
-    'empty arrowBox' 2fr
+    'empty actionBox' 2fr
     / 3fr 7fr;
   column-gap: 2rem;
   row-gap: 1rem;

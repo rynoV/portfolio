@@ -13,11 +13,12 @@ export default class HelpPopup extends PureComponent {
           <StyledHelpPopup state={state} duration={duration}>
             <ul>
               <li>
-                Scroll sideways or use the left/right arrows to scroll right and
-                left.
+                Scroll sideways or use the left/right arrow keys to scroll right
+                and left.
               </li>
               <li>
-                Scroll up or press the up/down arrows to cycle through slides.
+                Scroll up or press the up/down arrow keys to cycle through
+                slides.
               </li>
             </ul>
           </StyledHelpPopup>

@@ -24,8 +24,8 @@ export default class Help extends Component {
             src={helpIcon}
             alt="Help icon"
             onClick={this.toggle}
-            onMouseOver={() => console.log('over')}
-            onMouseLeave={() => console.log('leave')}
+            onMouseOver={this.handleMouseOver}
+            onMouseLeave={this.handleMouseLeave}
           />
         </HelpButton>
       </HelpWrapper>

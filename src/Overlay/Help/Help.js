@@ -7,7 +7,7 @@ import {
   HelpButton,
 } from './HelpStyles'
 
-import helpIcon from '../../../../images/help_icon.png'
+import helpIcon from '../../images/help_icon.png'
 import HelpPopup from './Popup/HelpPopup'
 
 export default class Help extends Component {
@@ -18,12 +18,16 @@ export default class Help extends Component {
   render() {
     return (
       <HelpWrapper>
-        <HelpIconWrapper>
-          <HelpButton>
-            <HelpIcon src={helpIcon} alt="Help icon" onClick={this.toggle} />
-          </HelpButton>
-        </HelpIconWrapper>
         <HelpPopup active={this.state.active} />
+        <HelpButton>
+          <HelpIcon
+            src={helpIcon}
+            alt="Help icon"
+            onClick={this.toggle}
+            onMouseOver={() => console.log('over')}
+            onMouseLeave={() => console.log('leave')}
+          />
+        </HelpButton>
       </HelpWrapper>
     )
   }
@@ -32,5 +36,13 @@ export default class Help extends Component {
     this.setState(state => ({
       active: !state.active,
     }))
+  }
+
+  handleMouseOver = () => {
+    this.setState({ active: true })
+  }
+
+  handleMouseLeave = () => {
+    this.setState({ active: false })
   }
 }

@@ -45,7 +45,7 @@ export const Frame = styled.div`
 `
 
 export const StyledPopupAvatar = styled.img`
-  height: 100%;
+  max-height: 100%;
   animation: ${getKeyframes} 500ms forwards;
   filter: drop-shadow(0px 5px 5px #00000033);
 `

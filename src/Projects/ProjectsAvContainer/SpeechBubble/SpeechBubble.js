@@ -49,7 +49,7 @@ export default class SpeechBubble extends PureComponent {
 
     window.addEventListener('resize', this.handleResize)
   }
-  
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize)
   }
@@ -97,13 +97,18 @@ export default class SpeechBubble extends PureComponent {
    */
   setScrollState = (scrolling, scrollLeft) => {
     if (scrolling === false) {
-      this.setInProjectBools(scrollLeft)
+      this.waitForUpdate = setTimeout(() => {
+        this.setInProjectBools(scrollLeft)
 
-      this.updateProjectIndex()
+        this.updateProjectIndex()
 
-      this.animate()
+        this.animate()
+      }, 50)
     }
-    if (scrolling === true) this.setState({ animate: false })
+    if (scrolling === true) {
+      clearTimeout(this.waitForUpdate)
+      this.setState({ animate: false })
+    }
   }
 
   /**

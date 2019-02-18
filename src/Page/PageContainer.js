@@ -294,10 +294,10 @@ export default class PageContainer extends Component {
   }, 50)
 
   handleScrollEnd = scrollLeft => {
+    this.scrollSnap(scrollLeft)
+
     const { speechBubbleComp } = this.state.refsContext.refs
     speechBubbleComp.setScrollState(false, scrollLeft)
-
-    this.scrollSnap(scrollLeft)
   }
 
   scrollSnap = scrollLeft => {

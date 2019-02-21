@@ -1,0 +1,28 @@
+:root {
+  --primary: #27b9b1;
+  --on-primary: #000;
+
+  --primary-dark: #008882;
+  --on-primary-dark: #fff;
+
+  --primary-light: #69ece3;
+  --on-primary-light: #000;
+
+  --secondary: #aa80ff;
+  --on-secondary: #000;
+
+  --secondary-dark: #7752cb;
+  --on-secondary-dark: #fff;
+
+  --secondary-light: #deb0ff;
+  --on-secondary-light: #000;
+
+  --background: #fff;
+  --on-background: #000;
+
+  --surface: #fff;
+  --on-surface: #000;
+
+  --error: #ffb200;
+  --on-error: #000;
+}

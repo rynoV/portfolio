@@ -7,7 +7,7 @@ import {
   HelpButton,
 } from './HelpStyles'
 
-import helpIcon from '../../images/help_icon.png'
+import helpIcon from '../../images/help-icon.svg'
 import HelpPopup from './Popup/HelpPopup'
 
 export default class Help extends Component {

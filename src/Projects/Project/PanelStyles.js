@@ -5,6 +5,4 @@ export const StyledProjectPanel = styled.div`
   width: 100vw;
   display: flex;
   justify-content: flex-end;
-  background: ${props => props.bgColour};
-  border: 5px solid #00000044;
 `

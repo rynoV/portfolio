@@ -43,7 +43,6 @@ export const StyledProjectFigure = styled.figure`
   width: 45%;
   max-width: 65%;
   max-height: 100%;
-  background: #bbb;
   img {
     max-width: 100%;
   }

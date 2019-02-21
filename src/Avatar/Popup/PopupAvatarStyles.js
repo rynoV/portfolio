@@ -45,8 +45,10 @@ export const Frame = styled.div`
   justify-content: center;
   align-items: flex-end;
   box-sizing: border-box;
-  border: 2px solid #00000033;
   padding: 5px 5px 0px;
+
+  background: var(--surface);
+  border: 1px solid var(--primary-light);
 `
 
 export const StyledPopupAvatar = styled.img`
@@ -54,7 +56,7 @@ export const StyledPopupAvatar = styled.img`
   max-width: 100%;
   max-height: 100%;
   width: auto;
-  height: auto;
+  height: var(--avatar-height);
   animation: ${getKeyframes} 500ms forwards;
-  filter: drop-shadow(0px 5px 5px #00000033);
+  /* filter: drop-shadow(0px 5px 5px #00000033); */
 `

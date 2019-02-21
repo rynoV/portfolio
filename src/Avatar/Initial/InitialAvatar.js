@@ -5,6 +5,7 @@ import {
   StyledInitialAvatar,
   Button,
   SpeechBubble,
+  Wrapper,
 } from './InitialAvatarStyles'
 
 import { stages, Progress } from '../../Context/context'
@@ -47,20 +48,18 @@ export default class InitialAvatar extends PureComponent {
         mountOnEnter
       >
         {state => (
-          <Button
-            tabIndex="1"
-            onClick={this.startUnmount}
-            mountState={state}
-            duration={duration}
-          >
+          <Wrapper mountState={state} duration={duration}>
             <SpeechBubble>
               <p>Click me!</p>
             </SpeechBubble>
-            <StyledInitialAvatar
-              src={avatar_standing}
-              alt="Pixel Avatar of Calum Sieppert"
-            />
-          </Button>
+
+            <Button tabIndex="1" onClick={this.startUnmount}>
+              <StyledInitialAvatar
+                src={avatar_standing}
+                alt="Pixel Avatar of Calum Sieppert"
+              />
+            </Button>
+          </Wrapper>
         )}
       </Transition>
     )

@@ -11,7 +11,7 @@ export const Arrow = styled.img`
   opacity: ${({ hovered }) => (hovered ? '1' : '0.1')};
   transition: opacity 300ms;
   height: 12vh;
-  filter: drop-shadow(0px 5px 5px #00000088);
+  /* filter: drop-shadow(0px 5px 5px #00000088); */
 `
 
 export const ArrowButton = styled.button`

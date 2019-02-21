@@ -1,20 +1,20 @@
+@import 'normalize.css';
+@import 'type.css';
+@import 'variables.css';
+
 html,
 body {
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   /*
    * Stop page from scrolling even if content does not exceed height of page */
-  /* overflow: hidden; */
   overscroll-behavior: none;
   max-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.3;
 }
 
 #root {
+  max-height: 100vh;
   /*
 		* Horizontally aline panel components to create horizontal site */
   display: flex;

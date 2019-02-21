@@ -36,7 +36,7 @@ export default class ProjectFigure extends PureComponent {
       >
         <img src={imgSrc} alt={imgAlt} />
         <h1>{name}</h1>
-        <figcaption>{description}</figcaption>
+        <figcaption className="caption">{description}</figcaption>
       </StyledProjectFigure>
     )
   }

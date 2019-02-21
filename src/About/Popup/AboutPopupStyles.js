@@ -18,6 +18,7 @@ const fade = ({ mountState }) => {
 
 export const StyledPopup = styled.section`
   --duration: ${({ duration }) => `${duration}ms`};
+  --avatar-height: 25vh;
 
   display: grid;
   grid-template:
@@ -27,12 +28,13 @@ export const StyledPopup = styled.section`
   opacity: 0;
   animation: ${fade} var(--duration) forwards;
   width: 50%;
-  max-height: 40%;
+  max-height: var(--avatar-height);
   padding: 2em 1em;
-  background: #bbb;
-  box-shadow: 10px 10px 10px 2px #00000044;
-  border: 3px solid #000000bb;
-  border-radius: 20px;
+
+  font: var(--body1-font);
+  background: linear-gradient(#eee, #fff);
+  border: 1px solid var(--primary);
+  color: var(--on-surface);
 `
 
 export const Info = styled.div`
@@ -58,5 +60,4 @@ export const PopupContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #00000022;
 `

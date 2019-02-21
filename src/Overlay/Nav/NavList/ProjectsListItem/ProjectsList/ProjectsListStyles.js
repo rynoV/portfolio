@@ -21,14 +21,11 @@ export const StyledProjectsList = styled.ul`
   --duration: ${({ duration }) => `${duration}ms`};
 
   display: flex;
-  list-style: none;
-  margin-left: 20px;
-  padding: 0;
 
   animation: ${expand} var(--duration) forwards;
   transform-origin: center left;
 
   li {
-    margin: 0px 20px;
+    margin: 0 20px;
   }
 `

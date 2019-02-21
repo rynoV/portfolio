@@ -27,6 +27,7 @@ const getKeyframes = ({ animate }) => {
 }
 
 export const StyledSpeechBubble = styled.div`
+  --background: white;
   --animDuration: ${({ animate }) => (animate ? '200ms' : '100ms')};
   --triangle-space: 30px;
 
@@ -39,7 +40,7 @@ export const StyledSpeechBubble = styled.div`
   bottom: var(--triangle-space);
   display: inline-block;
   margin-left: 10px;
-  background: #bbb;
+  background: var(--background);
 
   &&:after {
     content: '';
@@ -49,7 +50,7 @@ export const StyledSpeechBubble = styled.div`
     width: 0;
     height: 0;
     border: var(--triangle-space) solid transparent;
-    border-top-color: #bbb;
+    border-top-color: var(--background);
     border-bottom: 0;
     border-left: 0;
     margin-bottom: calc(-1 * var(--triangle-space));

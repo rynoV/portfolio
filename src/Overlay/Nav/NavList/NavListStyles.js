@@ -32,10 +32,7 @@ export const StyledNavList = styled.ul`
     text-decoration: none;
   }
   && > li {
-    background: #bbb;
-    border-radius: 0.3em;
     padding: 0.4em;
-    box-shadow: 0px 5px 5px 0.5px #00000066;
     margin: 20px 0px;
     width: min-content;
     height: min-content;

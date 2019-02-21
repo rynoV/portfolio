@@ -7,10 +7,12 @@ export const HelpWrapper = styled.div`
 `
 
 export const HelpIcon = styled.img`
-  height: 30px;
+  height: 25px;
+  width: 25px;
 `
 
 export const HelpButton = styled.button`
-  border: none;
   background: transparent;
+  border: none;
+  padding: 0;
 `

@@ -1,5 +1,7 @@
 # TODO
 
+- Try to convert animations (e.g. on hover) to css
+  - [](https://www.styled-components.com/docs/advanced#referring-to-other-components)
 - Avatars
 - Layout for contact popup
 

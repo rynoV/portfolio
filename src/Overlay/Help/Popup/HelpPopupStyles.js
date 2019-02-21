@@ -22,9 +22,6 @@ export const StyledHelpPopup = styled.div`
 
   margin: 1rem 0;
   padding: 0.2em;
-  background: #bbb;
-  box-shadow: 5px 5px 5px 2px #00000055;
-  border-radius: 10px;
 
   animation: ${fade} var(--duration) forwards;
 `

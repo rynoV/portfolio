@@ -4,7 +4,7 @@ import calgary from '../../images/temple.jpg'
 export const StyledContactPanel = styled.section`
   height: 100vh;
   min-width: 100vw;
-  background: center/cover no-repeat #aaa;
+  /* background: center/cover no-repeat #aaa; */
   display: flex;
   justify-content: center;
   align-items: center;

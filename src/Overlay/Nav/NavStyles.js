@@ -3,8 +3,7 @@ import styled from 'styled-components/macro'
 export const StyledNav = styled.nav`
   position: absolute;
   z-index: 500;
-  background: transparent;
-  margin: 10px 15px;
+  /* background: transparent; */
   min-width: ${({ active }) => (active ? '10%' : 'initial')};
   min-height: ${({ active }) => (active ? '30%' : 'initial')};
 `

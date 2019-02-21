@@ -50,7 +50,7 @@ export default class InitialAvatar extends PureComponent {
         {state => (
           <Wrapper mountState={state} duration={duration}>
             <SpeechBubble>
-              <p>Click me!</p>
+              <span>Click me!</span>
             </SpeechBubble>
 
             <Button tabIndex="1" onClick={this.startUnmount}>

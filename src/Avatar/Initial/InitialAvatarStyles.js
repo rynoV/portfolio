@@ -36,40 +36,51 @@ export const Button = styled.button`
   background: transparent;
   border: none;
   padding: 0;
-  
 `
 
 export const SpeechBubble = styled.div`
   --triangle-space: 20px;
 
+  font: var(--body1-font);
   color: var(--on-surface);
   background: var(--surface);
   border: 1px solid var(--primary);
+
+  display: flex;
+  align-items: center;
+
   position: relative;
-  padding: 0.5em 1em;
+  right: 10%;
   bottom: var(--triangle-space);
-  left: 10%;
+
+  padding: 0.5em 1em;
+  height: calc(var(--avatar-height) / 2);
 
   &&:after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 40%;
+
     width: 0;
     height: 0;
+
     border: var(--triangle-space) solid transparent;
     border-top-color: var(--primary);
     border-bottom: 0;
     border-left: 0;
+
     margin-bottom: calc(-1 * var(--triangle-space));
   }
 `
 
 export const StyledInitialAvatar = styled.img`
-  max-height: 10vh;
+  max-height: var(--avatar-height);
 `
 
 export const Wrapper = styled.div`
+  --avatar-height: 10vh;
+
   position: absolute;
   top: 50vh;
   left: 50vw;

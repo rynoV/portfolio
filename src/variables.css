@@ -17,11 +17,11 @@
   --secondary-light: #deb0ff;
   --on-secondary-light: #000;
 
-  --background: #fff;
+  --background: linear-gradient(#aaa, #ccc);
   --on-background: #000;
 
-  --surface: #fff;
-  --on-surface: #000;
+  --surface: linear-gradient(#ddd, #fff);
+  --on-surface: rgba(0, 0, 0, 0.8);
 
   --error: #ffb200;
   --on-error: #000;

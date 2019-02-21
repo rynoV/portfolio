@@ -49,11 +49,9 @@ export default class AboutPopup extends PureComponent {
         {state => (
           <PopupContainer>
             <StyledPopup mountState={state} duration={duration}>
-              <Frame>
-                <PopupAvatar
-                  ref={el => this.context.setRef(refKeys.popupAvComp, el)}
-                />
-              </Frame>
+              <PopupAvatar
+                ref={el => this.context.setRef(refKeys.popupAvComp, el)}
+              />
               <Info tabIndex="0">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

@@ -21,7 +21,13 @@ export const StyledHelpPopup = styled.div`
   --duration: ${({ duration }) => `${duration}ms`};
 
   margin: 1rem 0;
-  padding: 0.2em;
+  padding: 0.2rem;
+  max-width: 15vw;
 
   animation: ${fade} var(--duration) forwards;
+
+  font: var(--body1-font);
+  background: var(--surface);
+  color: var(--on-surface);
+  border: 1px solid var(--primary);
 `

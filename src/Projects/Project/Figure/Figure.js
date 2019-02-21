@@ -101,15 +101,18 @@ export default class ProjectFigure extends PureComponent {
   }
 
   initializeFromRefs = () => {
-    const { speechBubbleContainer, projectContainers, pageContainer } = this
+    const {
+      speechBubbleContainer,
+      projectContainers,
+      pageContainer,
+      figure,
+    } = this
+    
     this.container = projectContainers[this.props.index]
     this.containerWidth = this.container.offsetWidth
 
-    const containerOffset = getOffsetLeft(this.container, pageContainer)
-
     this.animateLeftBound =
-      getOffsetLeft(this.figure, this.pageContainer) -
-      speechBubbleContainer.offsetWidth
+      getOffsetLeft(figure, pageContainer) - speechBubbleContainer.offsetWidth
     this.animateRightBound = this.animateLeftBound + this.containerWidth
   }
 }

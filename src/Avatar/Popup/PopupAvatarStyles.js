@@ -33,30 +33,15 @@ const getKeyframes = ({ animate, travel }) => {
   `
 }
 
-export const Frame = styled.div`
+export const StyledPopupAvatar = styled.img`
   grid-area: avatar;
   justify-self: center;
-  align-self: center;
-  min-height: 0;
-  max-height: 100%;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  box-sizing: border-box;
-  padding: 5px 5px 0px;
 
-  background: var(--surface);
-  border: 1px solid var(--primary-light);
-`
-
-export const StyledPopupAvatar = styled.img`
-  object-fit: contain;
-  max-width: 100%;
-  max-height: 100%;
   width: auto;
   height: var(--avatar-height);
+
   animation: ${getKeyframes} 500ms forwards;
+
+  border-bottom: 1px solid var(--primary-light);
   /* filter: drop-shadow(0px 5px 5px #00000033); */
 `

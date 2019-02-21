@@ -16,10 +16,6 @@ class Arrows extends PureComponent {
     super(props)
 
     this.numOfPanels = 5
-
-    this.state = {
-      hovered: false,
-    }
   }
 
   static contextType = Refs
@@ -28,36 +24,14 @@ class Arrows extends PureComponent {
     const { panelIndex, stage } = this.props.progressContext
 
     const leftArrow = (
-      <ArrowButton
-        arrow="left"
-        onClick={this.handleLeftArrow}
-        tabIndex="0"
-        onMouseOver={this.handleMouseOver}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        <Arrow
-          hovered={this.state.hovered}
-          arrow="left"
-          src={leftArrowIcon}
-          alt="Left arrow"
-        />
+      <ArrowButton arrow="left" onClick={this.handleLeftArrow} tabIndex="0">
+        <Arrow arrow="left" src={leftArrowIcon} alt="Left arrow" />
       </ArrowButton>
     )
 
     const rightArrow = (
-      <ArrowButton
-        arrow="right"
-        onClick={this.handleRightArrow}
-        tabIndex="0"
-        onMouseOver={this.handleMouseOver}
-        onMouseLeave={this.handleMouseLeave}
-      >
-        <Arrow
-          hovered={this.state.hovered}
-          arrow="right"
-          src={rightArrowIcon}
-          alt="Right arrow"
-        />
+      <ArrowButton arrow="right" onClick={this.handleRightArrow} tabIndex="0">
+        <Arrow arrow="right" src={rightArrowIcon} alt="Right arrow" />
       </ArrowButton>
     )
 
@@ -88,14 +62,6 @@ class Arrows extends PureComponent {
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize)
-  }
-
-  handleMouseOver = () => {
-    this.setState({ hovered: true })
-  }
-
-  handleMouseLeave = () => {
-    this.setState({ hovered: false })
   }
 
   /**

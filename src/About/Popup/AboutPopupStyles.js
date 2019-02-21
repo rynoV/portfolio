@@ -32,16 +32,21 @@ export const StyledPopup = styled.section`
   padding: 2em 1em;
 
   font: var(--body1-font);
-  background: linear-gradient(#eee, #fff);
+  background: var(--surface);
   border: 1px solid var(--primary);
   color: var(--on-surface);
 `
 
 export const Info = styled.div`
+  --border: 1px solid var(--primary-light);
+
   grid-area: info;
   min-height: 0;
   overflow: scroll;
   max-height: 100%;
+
+  border-top: var(--border);
+  border-bottom: var(--border);
 
   && > * {
     overflow: auto;

@@ -36,5 +36,10 @@ export const StyledNavList = styled.ul`
     margin: 20px 0px;
     width: min-content;
     height: min-content;
+
+    font: var(--subtitle2-font);
+    background: var(--surface);
+    color: var(--on-surface);
+    border: 1px solid var(--primary);
   }
 `

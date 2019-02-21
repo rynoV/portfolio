@@ -113,6 +113,10 @@ export default class PopupAvatar extends PureComponent {
     updateAnimateState.bind(this, 'animate', animate)()
   }
 
+  stopAnimate = () => {
+    this.setState({ animate: false })
+  }
+
   /**
    * Sets the travelAmt and the travel state based on the 'top' param.
    * @param {Number} top the calculated offset of this component, disregarding animation.

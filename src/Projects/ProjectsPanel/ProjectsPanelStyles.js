@@ -5,4 +5,6 @@ export const StyledProjects = styled.section`
   /* Flex display important for horizontal layout of projects */
   display: flex;
   position: relative;
+  background: var(--background);
+  color: var(--on-background);
 `

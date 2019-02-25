@@ -7,7 +7,7 @@ export default class ContactInfo extends PureComponent {
   render() {
     return (
       <StyledContactInfo>
-        <h1>Get in touch:</h1>
+        <p class="header">Get in touch:</p>
         <p>
           Email me at{' '}
           <a href="mailto:sieppertcalum@gmail.com">sieppertcalum@gmail.com</a>{' '}

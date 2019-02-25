@@ -22,7 +22,7 @@ export const StyledHelpPopup = styled.div`
 
   margin: 1rem 0;
   padding: 0.2rem;
-  max-width: 15vw;
+  max-width: 25vw;
 
   animation: ${fade} var(--duration) forwards;
 

@@ -44,7 +44,7 @@ export const SpeechBubble = styled.div`
   font: var(--body1-font);
   color: var(--on-surface);
   background: var(--surface);
-  border: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
 
   display: flex;
   align-items: center;

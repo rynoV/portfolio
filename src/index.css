@@ -6,6 +6,7 @@ html,
 body {
   font-size: 10px;
   font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
   margin: 0;
   /*
    * Stop page from scrolling even if content does not exceed height of page */

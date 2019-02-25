@@ -25,11 +25,12 @@ export const StyledPopup = styled.section`
     'avatar info' 1fr
     / 3fr 7fr;
   column-gap: 1em;
-  opacity: 0;
-  animation: ${fade} var(--duration) forwards;
   width: 50%;
   max-height: var(--avatar-height);
   padding: 2em 1em;
+
+  opacity: 0;
+  animation: ${fade} var(--duration) forwards;
 
   font: var(--body1-font);
   background: var(--surface);
@@ -44,6 +45,7 @@ export const Info = styled.div`
   min-height: 0;
   overflow: scroll;
   max-height: 100%;
+  max-width: 35em;
 
   border-top: var(--border);
   border-bottom: var(--border);

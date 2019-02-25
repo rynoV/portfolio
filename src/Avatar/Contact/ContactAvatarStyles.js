@@ -40,13 +40,17 @@ const getKeyframes = ({ animate, travel }) => {
 }
 
 export const StyledContactAvatar = styled.img`
-  --height: 15vh;
   /**
    * Start it off the page, then when the animation kicks in let it take over the translation.
    */
   transform: ${({ travel }) => `translate3d(0, ${travel}, 0)`};
-  height: var(--height);
   animation: ${getKeyframes} 500ms forwards;
+
+  height: var(--avatar-height);
   margin-right: 2vw;
-  align-self: center;
+
+  grid-area: avatar;
+  justify-self: center;
+
+  border-bottom: 1px solid var(--primary-light);
 `

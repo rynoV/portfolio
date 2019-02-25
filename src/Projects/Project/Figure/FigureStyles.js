@@ -40,10 +40,15 @@ export const StyledProjectFigure = styled.figure`
   box-shadow: none;
   animation: ${getKeyframes} var(--duration) forwards;
   animation-timing-function: ease-out;
+
   width: 45%;
   max-width: 65%;
   max-height: 100%;
   img {
     max-width: 100%;
   }
+
+  background: var(--surface);
+  color: var(--on-surface);
+  border-bottom: 1px solid var(--primary);
 `

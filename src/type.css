@@ -52,6 +52,12 @@ button {
   font-variant: all-petite-caps;
 }
 
+p {
+  font: var(--body1-font);
+  line-height: 1.5;
+  max-width: 35em;
+}
+
 .caption {
   font-family: 'rob';
   font-size: 1.2rem;

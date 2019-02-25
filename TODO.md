@@ -1,5 +1,7 @@
 # TODO
 
+- Projects panel container can slide over the about panel.
+- Inset box shadow on projects panel background
 - Try to convert animations (e.g. on hover) to css
   - [](https://www.styled-components.com/docs/advanced#referring-to-other-components)
 - Avatars
